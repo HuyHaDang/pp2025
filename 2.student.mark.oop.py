@@ -42,17 +42,17 @@ marks_dict = {}
 def addStudent():
     numberOfStudent=int(input("number student: "))
     for i in range(numberOfStudent):
-      id=input("Input id of student: ")
-      name=input("Input name of student: ")
-      dob=input("Input dob of student: ")
+      id=input(f"Input id of student {i+1}: ")
+      name=input(f"Input name of student: {i+1} ")
+      dob=input(f"Input dob of student: {i+1} ")
       student=Student(name,id,dob)
       students_list.append(student)
 
 def addCourse():
     numberOfCourse=int(input("number course: "))
     for i in range(numberOfCourse):
-      id=input("Input id of course: ")
-      name=input("Input name of course: ")
+      id=input(f"Input id of course {i+1}: ")
+      name=input(f"Input name of course {i+1}: ")
       course=Course(name,id)
       courses_list.append(course)
 
@@ -107,7 +107,7 @@ def main():
         print("6. Show marks for a course")
         print("0. Exit")
         
-        choice = int(input("Your choice: ")) # Add int() here
+        choice = int(input("Your choice: ")) 
         match choice:
            case 1: addStudent()
            case 2: addCourse()
