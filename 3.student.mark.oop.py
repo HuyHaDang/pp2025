@@ -135,8 +135,26 @@ def showGPA():
    for student in students_list:
       print(student)
 
+def draw_student_list(stdscr):
+  stdscr.clear()
+  stdscr.border()
+  stdscr.addstr(1,2, "MANAGEMENT SYSTEM")
+  stdscr.addstr(2,2, f"{'ID':<10} | {'Name':<20} | {'GPA':<5}")
+  row=3
+  for student in students_list:
+      student.calculateGPA()
+      
 
+  students_list.sort(key =lambda x: x.get_gpa(), reverse=True)
 
+  for student in students_list:
+     stdscr.addstr(row,2,f"{student.get_id(): <10} | {student.get_name(): <20} | {student.get_gpa():<5}")
+     row+=1
+  stdscr.addstr(row + 2, 2, "Press any key to exit UI...")
+      
+      # 5. Wait for user input
+  stdscr.refresh()               # Actually paint it to the screen
+  stdscr.getch()
       
 
 
@@ -148,7 +166,6 @@ def main():
   courses_list.append(  Course("python", "python", 4))
   courses_list.append(  Course("java", "java", 3))
   
-
 
   while True:
         print("\n==============================")
@@ -170,7 +187,9 @@ def main():
            case 4: listCourses()
            case 5: inputMark()
            case 6: showMark()
-           case 7: showGPA()
+          #  case 7: showGPA()
+           case 7: 
+              curses.wrapper(draw_student_list)
            case 0: break
 
 
