@@ -152,16 +152,16 @@ def draw_student_list(stdscr):
      row+=1
   stdscr.addstr(row + 2, 2, "Press any key to exit UI...")
       
-      # 5. Wait for user input
+      
   stdscr.refresh()               # Actually paint it to the screen
   stdscr.getch()
       
 
 
 def main():
-  students_list.append(Student("huyhadang", 138, 1910)) 
-  students_list.append(Student("abcxyz", 139, 2505)) 
-  students_list.append(Student("xmn", 137, 2705)) 
+  students_list.append(Student("huyhadang", "138", 1910)) 
+  students_list.append(Student("abcxyz", "139", 2505)) 
+  students_list.append(Student("xmn", "137", 2705)) 
   
   courses_list.append(  Course("python", "python", 4))
   courses_list.append(  Course("java", "java", 3))

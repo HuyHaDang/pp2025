@@ -1,0 +1,2 @@
+COURSE python: asdf: 4.0| asdf: 6.0| 
+COURSE python: tahuy: 13.0| hhd: 15.0| 

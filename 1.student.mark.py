@@ -83,6 +83,7 @@ def main():
         print("0. Exit")
         
         choice = int(input("Your choice: ")) # Add int() here
+        
         match choice:
            case 1: addStudent()
            case 2: addCourse()
@@ -91,6 +92,8 @@ def main():
            case 5: inputMark()
            case 6: showMark()
            case 0: break
-
+           case _: 
+              print("invalid number")
+              continue
 
 main()
